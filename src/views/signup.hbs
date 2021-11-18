@@ -1,21 +1,30 @@
 <script defer src="/signup.js"></script>
+<div class="d-flex justify-content-center mt-5">
+  <form style="width: 50vw;" name='signupForm'>
+    <div class="mb-3">
+      <label for="InputName" class="form-label">И.Ф.О</label>
+      <input type="text" class="form-control" id="InputName" aria-describedby="emailHelp" name="name">
+      <div id="emailHelp" class="form-text">Мы никогда не будем делиться вашей личной иноформацией ни с кем другим..</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" name="email">
+      <div id="emailHelp" class="form-text">Мы никогда не будем делиться вашей электронной почтой ни с кем другим.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="InputPassword1" name="pass">
+    </div>
+    <div class="mb-3">
+      <label for="InputForm" class="form-label">телефон</label>
+      <input type="phone" class="form-control" id="InputForm" name="phone">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="Check1">
+      <label class="form-check-label" for="Check1">Запомнить меня</label>
+    </div>
+    <button type="submit" class="btn btn-primary ">Регистрация</button>
+  </form>
 
-<form name='signupForm'>
-  <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" name="email">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputName" class="form-label">Name</label>
-    <input type="text" class="form-control" name="name">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword" class="form-label">Password</label>
-    <input type="password" class="form-control" name="pass">
-  </div>
-  <div class="mb-3">
-    <label  class="form-label">Phone</label>
-    <input type="tel" class="form-control" name="phone">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
+
