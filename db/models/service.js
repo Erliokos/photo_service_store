@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({ZAKAZ}) {
       // define association here
-      this.ZAKAZ.belongsToMany(ZAKAZ,{through:'ZAKAZ - SERVICE', foreignKey: 'service_id'})
+      this.belongsToMany(ZAKAZ,{through:'ZAKAZ_SERVICE', foreignKey: 'service_id'})
     }
   };
   SERVICE.init({

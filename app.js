@@ -6,6 +6,7 @@ require('dotenv').config();
 const indexRouter = require('./routes/index.router');
 const signupRouter = require('./routes/signup.router');
 const signinRouter = require('./routes/signin.router');
+const session = ('express-session')
 
 const app = express();
 
