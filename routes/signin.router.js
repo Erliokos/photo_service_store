@@ -7,13 +7,20 @@ router.route('/')
 })
 .post( async (req, res) => {
   try {
+    console.log(req.body);
     const {email, pass } = req.body
     if (email.trim()) {
     const userFromDB = await USER.findOne({where: {email}})
-    res.sendStatus(200)
+    console.log(email, pass );
+    if(userFromDB.pass === pass.trim() && userFromDB.email === email.trim()){
+      req.session.userId = userFromDB.id
+      req.session.userEmail = userFromDB.email
+      console.log(req.session);
+      res.sendStatus(200)
     } else {
       res.sendStatus(400)
     }
+  }
   } catch (error) {
     res.sendStatus(500)
   }
