@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     service_id: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'ZAKAZ-SERVICE',
+    modelName: 'ZAKAZ_SERVICE',
   });
   return ZAKAZ_SERVICE;
 };
