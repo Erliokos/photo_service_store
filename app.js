@@ -48,6 +48,12 @@ app.use('/service', serviceRouter)
 app.use('/porfolio', portfolioRouter);
 app.use('/lk', lkRouter);
 
+app.get('/logout', (req,res)=>{
+  req.session.destroy();
+  res.clearCookie("sid");
+  res.redirect("/");
+})
+
 
 
 const PORT = process.env.PORT || 3001;
