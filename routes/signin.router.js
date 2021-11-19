@@ -13,9 +13,9 @@ router.route('/')
     const userFromDB = await USER.findOne({where: {email}})
     console.log(email, pass );
     if(userFromDB.pass === pass.trim() && userFromDB.email === email.trim()){
-      req.session.userId = userFromDB.id
-      req.session.userEmail = userFromDB.email
-      console.log(req.session);
+      req.session.user = { id: userFromDB.id, name: userFromDB.name };
+
+      // console.log(req.session);
       res.sendStatus(200)
     } else {
       res.sendStatus(400)
