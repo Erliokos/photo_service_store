@@ -3,6 +3,8 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script defer src='/index.js'></script>
@@ -11,17 +13,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>photo service store</title>
 </head>
-<header>
-
-</header>
-<body>
   <header>
     <div class="collapse" id="navbarHeader" style="background-image: url('./img/studio.png');background-size: 100%;">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-md-7 py-4">
             <h4 class="text-white">К СЛОВУ</h4>
-            <p class="text-muted">Запечатлеть важный момент в вашей жизни, будь то праздник,светское мероприятие или спортивные соревнования, можно и на телефон, но никакой телефон не позволит так точно и качественно передать всю атмосферу вокруг, как это сделаем мы. Такие снимки способны передать всю гамму эмоций и останутся на память на всю жизнь.</p>
+            <p class="text-white">Запечатлеть важный момент в вашей жизни, будь то праздник,светское мероприятие или спортивные соревнования, можно и на телефон, но никакой телефон не позволит так точно и качественно передать всю атмосферу вокруг, как это сделаем мы. Такие снимки способны передать всю гамму эмоций и останутся на память на всю жизнь.</p>
           </div>
           <div class="col-sm-4 offset-md-1 py-4">
             <h4 class="text-white">Контакты</h4>
@@ -34,31 +32,46 @@
         </div>
       </div>
     </div>
-    <div class="navbar navbar-dark bg-secondary shadow-sm">
+    <div class="navbar navbar-dark bg-secondary shadow-sm ">
       <div class="container">
         <a href="/" class="navbar-brand d-flex align-items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <strong>Главная</strong>
+          <ion-icon name="aperture-outline"></ion-icon>
+          <strong class="fs-6">Главная</strong>
         </a>
-        <a href="#" class="navbar-brand d-flex align-items-center">
+        <a href="/porfolio" class="navbar-brand d-flex align-items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <strong>Портфолио</strong>
+          <strong class="fs-6">Портфолио</strong>
         </a>
-        <a href="#" class="navbar-brand d-flex align-items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <strong>Услуги</strong>
+        <a href="/service" class="navbar-brand d-flex align-items-center">
+          <ion-icon name="albums-outline"></ion-icon>
+          <strong class="fs-6">Услуги</strong>
         </a>
+        {{#if user}}
         <a href="/signin" class="navbar-brand d-flex align-items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <strong>Личный кабинет</strong>
+          <strong class="fs-6">{{user.name}}</strong>
         </a>
+        {{else}}
+        
+                <a href="/signin" class="navbar-brand d-flex align-items-center">
+          <ion-icon name="log-in-outline"></ion-icon>
+          <strong class="fs-6">Вход в личный кабинет</strong>
+        </a>
+        {{/if}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
     </div>
   </header>
-  {{{body}}}  
+  
+  
+  
+  
+        
+    <body class="mainbody" style="background-image: url('./img/photo1.jpeg');background-size: 100%;" >
+    {{{body}}}  
+</body>
   <footer class="text-muted py-3 bg-secondary fixed-bottom">
     <div class="container">
       <p class="float-end mb-1">
@@ -67,12 +80,6 @@
       <p class="mb-1 text-white">Сделано командой UNIA &copy; 2021 with Elbrus Teaw</p>
     </div>
   </footer >
-  
-  
-  
-        
-    </body>
-</body>
 
 </html>
 
