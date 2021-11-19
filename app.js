@@ -8,6 +8,7 @@ const signupRouter = require('./routes/signup.router');
 const signinRouter = require('./routes/signin.router');
 const serviceRouter = require('./routes/service.router');
 const portfolioRouter = require('./routes/portfolio.router')
+const lkRouter = require('./routes/lk.router')
 const session = require('express-session')
 const FileStore = require('session-file-store')(session)
 
@@ -45,6 +46,7 @@ app.use('/signup', signupRouter);
 app.use('/signin', signinRouter);
 app.use('/service', serviceRouter)
 app.use('/porfolio', portfolioRouter);
+app.use('/lk', lkRouter);
 
 
 
